@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(e) {
+
 
     loadData();
 
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
                         });
                         var data = JSON.stringify(parsedData);
                         localStorage.setItem('infos', data);
+                        document.getElementById('sBtn').textContent = 'Save';
                         alert('Information updated successfully');
                     }
                 }
@@ -133,4 +134,25 @@ document.addEventListener('DOMContentLoaded', function(e) {
         }
     }
 
-});
+
+function filterDataInTable() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("info-table");
+    tr = table.getElementsByTagName("tr");
+    for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (var j = 0; j < td.length; j++) {
+            cell = tr[i].getElementsByTagName("td")[j];
+            if (cell) {
+                if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    break;
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,7 @@
+.search-box {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
 .table, .table tr th, .table tr td {
     border-collapse: collapse;
     border: 1px solid gray;

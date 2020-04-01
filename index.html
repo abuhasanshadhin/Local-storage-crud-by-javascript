@@ -28,11 +28,14 @@
             </tr>
             <tr>
                 <td colspan="2"></td>
-                <td><button id="sBtn">Submit</button></td>
+                <td><button id="sBtn">Save</button></td>
             </tr>
         </table>
     </form>
 
+    <div class="search-box">
+        Search : <input type="text" id="search" onkeyup="filterDataInTable()">
+    </div>
     <table class="table" id="info-table"></table>
 
     <script src="script.js"></script>
